@@ -31,8 +31,8 @@ class TiVoRemote extends EventEmitter {
      * Send an IR code to the DVR. The list of supported codes
      * is very long; For details, see [Ircode](KEYS.md#ircode)
      */
-    sendIRcode(code) {
-        _sendTiVoCommand('IRCODE', code);
+    sendIRCode(code) {
+        this._sendTiVoCommand('IRCODE', code);
     }
 
     /**
@@ -40,14 +40,14 @@ class TiVoRemote extends EventEmitter {
      * is very long; For details, see [KeyboardCode](KEYS.md#keyboardcode)
      */
     sendKeyboardCode(code) {
-        _sendTiVoCommand('KEYBOARD', code);
+        this._sendTiVoCommand('KEYBOARD', code);
     }
 
     /**
      * "Teleport" to a given location in the DVR UI.
      */
     teleport(destination) {
-        _sendTiVoCommand('TELEPORT', destination);
+        this._sendTiVoCommand('TELEPORT', destination);
     }
 
     /**
@@ -56,7 +56,7 @@ class TiVoRemote extends EventEmitter {
      * (canceling the recording).
      */
     setChannel(channel, forced = false) {
-        _sendTiVoCommand(forced ? 'FORCECH' : 'SETCH', channel);
+        this._sendTiVoCommand(forced ? 'FORCECH' : 'SETCH', channel);
     }
 
     /**
